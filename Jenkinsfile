@@ -5,19 +5,19 @@ pipeline {
         stage('Cleaning stage') {
             steps {
                 echo 'Cleaning..'
-				mvn clean
+		bat 'mvn clean'
             }
         }
         stage('Testing stage') {
             steps {
                 echo 'Testing..'
-				mvn test
+		bat 'mvn test'
             }
         }
         stage('Packaging stage') {
             steps {
                 echo 'Packaging....'
-				mvn package
+		bat 'mvn package'
             }
         }
     }
