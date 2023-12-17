@@ -27,5 +27,10 @@ pipeline {
 		archiveArtifacts 'target/*.jar'
 	    }
     	}
+	stage('Email build status') {
+	    steps{
+		mail bcc: '', body: 'Sample body', cc: '', from: '', replyTo: '', subject: 'Sample jenkins results', to: 'akhilendra_phondekar@outlook.com'
+	    }
+    	}
     }
 }
